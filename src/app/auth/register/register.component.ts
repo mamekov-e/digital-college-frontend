@@ -19,9 +19,6 @@ export class RegisterComponent implements OnInit {
               private notificationService: NotificationService,
               private router: Router,
               private fb: FormBuilder) {
-    if (this.tokenStorage.getUser()) {
-      this.router.navigate(['main']);
-    }
   }
 
   ngOnInit(): void {
@@ -40,6 +37,8 @@ export class RegisterComponent implements OnInit {
   }
 
   submit(): void {
+    console.log(this.registerForm.value);
+
     this.authService.register({
       firstName: this.registerForm.value.firstName,
       lastName: this.registerForm.value.lastName,
@@ -47,9 +46,11 @@ export class RegisterComponent implements OnInit {
       phoneNumber: this.registerForm.value.phoneNumber,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password
-    }).subscribe( data => {
+    }).subscribe!( data => {
       console.log(data);
       this.notificationService.showSnackBar("Successfully registered");
+      this.router.navigate(['login']);
+
     }, error => {
       this.notificationService.showSnackBar(error.message);
     })

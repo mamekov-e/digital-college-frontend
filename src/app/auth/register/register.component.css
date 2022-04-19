@@ -1,11 +1,12 @@
 .register-page {
   text-align: center;
+  padding: 30px;
 }
 
 #controls {
   display: block;
   margin: 0 auto;
-  width: 30%;
+  width: 50%;
 }
 
 mat-form-field {
