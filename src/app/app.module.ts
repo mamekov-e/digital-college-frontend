@@ -16,6 +16,11 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import { IndexComponent } from './layout/index/index.component';
+import {MatListModule} from "@angular/material/list";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -24,19 +29,24 @@ import {MatNativeDateModule} from "@angular/material/core";
     RegisterComponent,
     NavigationComponent,
     ProfileComponent,
-    EditUserComponent
+    EditUserComponent,
+    IndexComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AppRoutingModule,
-    MatNativeDateModule,
-    MatDatepickerModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule,
+        AppRoutingModule,
+        MatNativeDateModule,
+        MatDatepickerModule,
+        MatListModule,
+        MatExpansionModule,
+        MatTabsModule,
+        MatTableModule
+    ],
   providers: [authInterceptorProviders, authErrorInterceptorProviders],
   bootstrap: [AppComponent]
 })

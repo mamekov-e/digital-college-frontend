@@ -6,6 +6,12 @@ export interface User {
   iin?: string;
   phoneNumber: string;
   dob?: Date;
+  schoolName: string;
+  schoolCity: string;
+  schoolState: string;
+  startDate: Date;
+  endDate: Date;
   email: string;
+  status: string;
 
 }

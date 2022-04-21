@@ -34,6 +34,42 @@
       </mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <!--  School name  -->
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>School name</mat-label>
+      <input matInput
+             formControlName="schoolName">
+    </mat-form-field>
+    <!--  School city  -->
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>School city</mat-label>
+      <input matInput
+             formControlName="schoolCity">
+    </mat-form-field>
+    <!--  School state  -->
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>School state</mat-label>
+      <input matInput
+             formControlName="schoolState">
+    </mat-form-field>
+    <!--  Start date  -->
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="startDate">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <!--  End date  -->
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="endDate">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
 
     <div class="row">
       <button (click)="closeDialog()" class="w-50"

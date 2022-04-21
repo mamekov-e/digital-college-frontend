@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 })
 export class NavigationComponent implements OnInit {
 
+  isAdmin = false;
   isLoggedIn = false;
   isDataLoaded = false;
   user!: User;
@@ -23,11 +24,15 @@ export class NavigationComponent implements OnInit {
     this.isLoggedIn = !!this.tokenService.getUser();
 
     if (this.isLoggedIn) {
+      if (this.tokenService.getRole() === "ROLE_ADMIN") {
+        this.isAdmin = true;
+      }
+
       this.userService.getCurrentUser()
         .subscribe!( data => {
           this.user = data;
           this.isDataLoaded = true;
-      })
+        })
     }
   }
 

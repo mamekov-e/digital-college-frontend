@@ -44,6 +44,21 @@ export class EditUserComponent implements OnInit {
       ],
       dob: [
         this.data.user.dob
+      ],
+      schoolName: [
+        this.data.user.schoolName
+      ],
+      schoolCity: [
+        this.data.user.schoolCity
+      ],
+      schoolState: [
+        this.data.user.schoolState
+      ],
+      startDate: [
+        this.data.user.startDate
+      ],
+      endDate: [
+        this.data.user.endDate
       ]
     });
   }
@@ -62,6 +77,11 @@ export class EditUserComponent implements OnInit {
     this.data.user.middleName = this.profileEditForm.value.middleName;
     this.data.user.iin = this.profileEditForm.value.iin;
     this.data.user.dob = this.profileEditForm.value.dob;
+    this.data.user.schoolName = this.profileEditForm.value.schoolName;
+    this.data.user.schoolCity = this.profileEditForm.value.schoolCity;
+    this.data.user.schoolState = this.profileEditForm.value.schoolState;
+    this.data.user.startDate = this.profileEditForm.value.startDate;
+    this.data.user.endDate = this.profileEditForm.value.endDate;
 
     console.log(this.data)
 
