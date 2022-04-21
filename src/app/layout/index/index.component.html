@@ -1,5 +1,5 @@
 <div *ngIf="isUserDataLoaded" class="index-page">
-  <div *ngIf="isAdmin && isUsersLoaded" class="users-list">
+  <div *ngIf="isAdmin && isUserDataLoaded" class="users-list">
     <mat-tab-group>
       <mat-tab label="Unchecked">
         <mat-list-item *ngFor="let user of uncheckedList(); let i = index">

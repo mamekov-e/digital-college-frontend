@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {FileUploadService} from "../../service/file-upload.service";
 import {HttpErrorResponse, HttpEvent, HttpEventType} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {AdminService} from "../../service/admin.service";
 
 @Component({
   selector: 'app-index',
@@ -25,6 +26,7 @@ export class IndexComponent implements OnInit {
   user!: User;
 
   constructor(private userService: UserService,
+              private adminService: AdminService,
               private fileService: FileUploadService,
               private router: Router,
               private tokenService: TokenStorageService) { }
@@ -43,16 +45,16 @@ export class IndexComponent implements OnInit {
 
   accept(userId: number) {
     console.log(userId);
-    this.userService.changeUserStatus(userId, "accepted");
+    this.adminService.changeUserStatus(userId, "accepted");
   }
 
   decline(userId: number) {
     console.log(userId);
-    this.userService.changeUserStatus(userId, "declined");
+    this.adminService.changeUserStatus(userId, "declined");
   }
 
   acceptedList(): User[] {
-    this.userService.getAllUsersAccepted()
+    this.adminService.getAllUsersAccepted()
       .subscribe(data => {
         this.usersAccepted = data;
         this.isUsersLoaded = true;
@@ -62,7 +64,7 @@ export class IndexComponent implements OnInit {
   }
 
   declinedList(): User[] {
-    this.userService.getAllUsersDeclined()
+    this.adminService.getAllUsersDeclined()
       .subscribe(data => {
         this.usersDeclined = data;
         this.isUsersLoaded = true;
@@ -72,7 +74,7 @@ export class IndexComponent implements OnInit {
   }
 
   uncheckedList(): User[] {
-    this.userService.getAllUsersUnchecked()
+    this.adminService.getAllUsersUnchecked()
       .subscribe(data => {
         this.usersUnchecked = data;
         this.isUsersLoaded = true;

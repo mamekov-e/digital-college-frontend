@@ -1,79 +1,86 @@
 <div>
   <h2>Edit User Profile</h2>
   <form [formGroup]="profileEditForm">
-    <!--  Firts name  -->
-    <mat-form-field class="w-100" appearance="outline">
-      <mat-label>First name</mat-label>
-      <input matInput
-             formControlName="firstName">
-    </mat-form-field>
-    <!--  Last name  -->
-    <mat-form-field class="w-100" appearance="outline">
-      <mat-label>Last name</mat-label>
-      <input matInput
-             formControlName="lastName">
-    </mat-form-field>
-    <!--  Middle name  -->
-    <mat-form-field class="w-100" appearance="outline">
-      <mat-label>Middle name</mat-label>
-      <input matInput
-             formControlName="middleName">
-    </mat-form-field>
-    <!--  IIN  -->
-    <mat-form-field class="w-100" appearance="outline">
-      <mat-label>IIN</mat-label>
-      <input matInput
-             formControlName="iin">
-    </mat-form-field>
-    <!--  DOB  -->
-    <mat-form-field class="w-100" appearance="outline">
-      <mat-label>Choose a date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="dob">
-      <mat-datepicker-toggle matSuffix [for]="picker">
-        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-      </mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <!--  School name  -->
-    <mat-form-field class="w-100" appearance="outline">
-      <mat-label>School name</mat-label>
-      <input matInput
-             formControlName="schoolName">
-    </mat-form-field>
-    <!--  School city  -->
-    <mat-form-field class="w-100" appearance="outline">
-      <mat-label>School city</mat-label>
-      <input matInput
-             formControlName="schoolCity">
-    </mat-form-field>
-    <!--  School state  -->
-    <mat-form-field class="w-100" appearance="outline">
-      <mat-label>School state</mat-label>
-      <input matInput
-             formControlName="schoolState">
-    </mat-form-field>
-    <!--  Start date  -->
-    <mat-form-field class="w-100" appearance="outline">
-      <mat-label>Choose a date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="startDate">
-      <mat-datepicker-toggle matSuffix [for]="picker">
-        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-      </mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <!--  End date  -->
-    <mat-form-field class="w-100" appearance="outline">
-      <mat-label>Choose a date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="endDate">
-      <mat-datepicker-toggle matSuffix [for]="picker">
-        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-      </mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-
+    <div class="row">
+      <div class="col">
+        <!--  First name  -->
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>First name</mat-label>
+          <input matInput
+                 formControlName="firstName">
+        </mat-form-field>
+        <!--  Last name  -->
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Last name</mat-label>
+          <input matInput
+                 formControlName="lastName">
+        </mat-form-field>
+        <!--  Middle name  -->
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Middle name</mat-label>
+          <input matInput
+                 formControlName="middleName">
+        </mat-form-field>
+        <!--  IIN  -->
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>IIN</mat-label>
+          <input matInput
+                 formControlName="iin">
+        </mat-form-field>
+        <!--  DOB  -->
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Choose date of birth</mat-label>
+          <input matInput [matDatepicker]="dob" formControlName="dob">
+          <mat-datepicker-toggle matSuffix [for]="dob">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #dob></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <!--  School name  -->
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>School name</mat-label>
+          <input matInput
+                 formControlName="schoolName">
+        </mat-form-field>
+        <!--  School city  -->
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>School city</mat-label>
+          <input matInput
+                 formControlName="schoolCity">
+        </mat-form-field>
+        <!--  School state  -->
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>School state</mat-label>
+          <input matInput
+                 formControlName="schoolState">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <!--  Start date  -->
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Choose start date</mat-label>
+          <input matInput [matDatepicker]="startDate" formControlName="startDate">
+          <mat-datepicker-toggle matSuffix [for]="startDate">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #startDate></mat-datepicker>
+        </mat-form-field>
+        <!--  End date  -->
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Choose end date</mat-label>
+          <input matInput [matDatepicker]="endDate" formControlName="endDate">
+          <mat-datepicker-toggle matSuffix [for]="endDate">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #endDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
     <div class="row">
       <button (click)="closeDialog()" class="w-50"
-              mat-button mat-dialog-close disableRipple>
+              mat-button mat-dialog-close="Cancel" disableRipple>
         Cancel
       </button>
       <button color="primary" class="w-50" [disabled]="profileEditForm.invalid" (click)="submit()" mat-button

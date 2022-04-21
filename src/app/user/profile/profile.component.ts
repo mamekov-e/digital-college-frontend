@@ -6,6 +6,7 @@ import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {NotificationService} from "../../service/notification.service";
 import {ImageUploadService} from "../../service/image-upload.service";
 import {EditUserComponent} from "../edit-user/edit-user.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profile',
@@ -23,6 +24,7 @@ export class ProfileComponent implements OnInit {
   constructor(private tokenService: TokenStorageService,
               private userService: UserService,
               private dialog: MatDialog,
+              private router: Router,
               private notificationService: NotificationService,
               private imageService: ImageUploadService) { }
 
@@ -53,7 +55,8 @@ export class ProfileComponent implements OnInit {
   openEditDialog(): void {
     const dialogUserEditConfig = new MatDialogConfig();
 
-    dialogUserEditConfig.width = "400px";
+    dialogUserEditConfig.width = "900px";
+    dialogUserEditConfig.height = "auto";
     dialogUserEditConfig.data = {
       user: this.user
     }

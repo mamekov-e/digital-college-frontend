@@ -17,20 +17,48 @@
       <button mat-button (click)="fileInput.click()">Pick File</button>
       <button mat-button *ngIf="selectedFile" (click)="onUpload()">Upload</button>
     </div>
-    <div class="col" style="text-align: left">
+    <div class="col">
       <h3>Email: <h4>{{user.email}}</h4></h3>
       <h3>Full name:  <h4>{{user.firstName}} {{user.lastName}} {{user.middleName}}</h4></h3>
+    </div>
+    <div class="col">
       <h3>Phone number:  <h4>{{user.phoneNumber}}</h4></h3>
-      <h3 *ngIf="user.schoolName != null">School name: <h4>{{user.schoolName }}</h4></h3>
-      <h3 *ngIf="user.schoolCity != null">School city: <h4>{{user.schoolCity}}</h4></h3>
-      <h3 *ngIf="user.schoolState != null">School state: <h4>{{user.schoolState}}</h4></h3>
-      <h3 *ngIf="user.startDate != null">Start date: <h4>{{user.startDate}}</h4></h3>
-      <h3 *ngIf="user.endDate != null">End date: <h4>{{user.endDate}}</h4></h3>
       <h3 *ngIf="user.iin != null">IIN: <h4>{{user.iin}}</h4></h3>
       <h3 *ngIf="user.dob != null">Date of birth: <h4>{{user.dob}}</h4></h3>
     </div>
+    <div class="col">
+      <h3 *ngIf="user.schoolName != null">School name: <h4>{{user.schoolName }}</h4></h3>
+      <h3 *ngIf="user.schoolCity != null">School city: <h4>{{user.schoolCity}}</h4></h3>
+      <h3 *ngIf="user.schoolState != null">School state: <h4>{{user.schoolState}}</h4></h3>
+    </div>
+    <div class="col">
+      <h3 *ngIf="user.startDate != null">Start date: <h4>{{user.startDate}}</h4></h3>
+      <h3 *ngIf="user.endDate != null">End date: <h4>{{user.endDate}}</h4></h3>
+    </div>
+<!--    <div class="col" style="text-align: left">-->
+<!--      <div class="row">-->
+<!--        <div class="col">-->
+<!--          <h3>Email: <h4>{{user.email}}</h4></h3>-->
+<!--          <h3>Full name:  <h4>{{user.firstName}} {{user.lastName}} {{user.middleName}}</h4></h3>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--          <h3>Phone number:  <h4>{{user.phoneNumber}}</h4></h3>-->
+<!--          <h3 *ngIf="user.iin != null">IIN: <h4>{{user.iin}}</h4></h3>-->
+<!--          <h3 *ngIf="user.dob != null">Date of birth: <h4>{{user.dob}}</h4></h3>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--          <h3 *ngIf="user.schoolName != null">School name: <h4>{{user.schoolName }}</h4></h3>-->
+<!--          <h3 *ngIf="user.schoolCity != null">School city: <h4>{{user.schoolCity}}</h4></h3>-->
+<!--          <h3 *ngIf="user.schoolState != null">School state: <h4>{{user.schoolState}}</h4></h3>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--          <h3 *ngIf="user.startDate != null">Start date: <h4>{{user.startDate}}</h4></h3>-->
+<!--          <h3 *ngIf="user.endDate != null">End date: <h4>{{user.endDate}}</h4></h3>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <mat-divider style="margin: 2rem 0"></mat-divider>
+    <mat-divider style="margin: 3rem 0"></mat-divider>
 
     <router-outlet></router-outlet>
 
