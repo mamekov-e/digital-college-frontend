@@ -36,8 +36,7 @@ export class EditUserComponent implements OnInit {
         Validators.compose([Validators.required])
       ],
       middleName: [
-        this.data.user.middleName,
-        Validators.compose([Validators.required])
+        this.data.user.middleName
       ],
       iin: [
         this.data.user.iin

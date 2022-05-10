@@ -11,11 +11,11 @@
 
       <input type="file"
              style="display: none"
-             #fileInput
+             #imageInput
              (change)="onFileSelected($event)">
 
-      <button mat-button (click)="fileInput.click()">Pick File</button>
-      <button mat-button *ngIf="selectedFile" (click)="onUpload()">Upload</button>
+      <button mat-button (click)="imageInput.click()">Pick File</button>
+      <button mat-button *ngIf="!isUploaded && selectedFile" (click)="onUpload()">Upload</button>
     </div>
     <div class="col">
       <h3>Email: <h4>{{user.email}}</h4></h3>
@@ -63,27 +63,27 @@
     <router-outlet></router-outlet>
 
   </div>
-<!--  <mat-divider style="margin: 2rem 0"></mat-divider>-->
+  <mat-divider style="margin: 2rem 0"></mat-divider>
 
   <div class="row">
     <div class="col">
       <h3>Upload attestation file</h3>
       <input type="file"
              style="display: none"
-             #fileInput
+             #attestationInput
              (change)="onFileSelected($event)">
 
-      <button mat-button (click)="fileInput.click()">Choose file</button>
+      <button mat-button (click)="attestationInput.click()">Choose file</button>
       <button mat-button *ngIf="selectedFile" (click)="onUpload()">Upload</button>
     </div>
     <div class="col">
       <h3>Upload IIN file</h3>
       <input type="file"
              style="display: none"
-             #fileInput
+             #idInput
              (change)="onFileSelected($event)">
 
-      <button mat-button (click)="fileInput.click()">Choose file</button>
+      <button mat-button (click)="idInput.click()">Choose file</button>
       <button mat-button *ngIf="selectedFile" (click)="onUpload()">Upload</button>
     </div>
   </div>

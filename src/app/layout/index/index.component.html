@@ -1,8 +1,8 @@
 <div *ngIf="isUserDataLoaded" class="index-page">
-  <div *ngIf="isAdmin && isUserDataLoaded" class="users-list">
+  <div *ngIf="isAdmin && isUsersLoaded" class="users-list">
     <mat-tab-group>
       <mat-tab label="Unchecked">
-        <mat-list-item *ngFor="let user of uncheckedList(); let i = index">
+        <mat-list-item *ngFor="let user of usersUnchecked; let i = index">
           <mat-expansion-panel hideToggle style="margin-bottom: 15px">
             <mat-expansion-panel-header>
               <!-- User FLM names-->
@@ -17,20 +17,21 @@
             <!--User details content-->
             <div class="example-button-row">
               <h3>Attached files from student</h3>
-              <div *ngFor="let filename of filenames" class="list-group">
-                <a (click)="onDownloadFile(filename, user.id)" class="list-group-item list-group-item-success" style="cursor: pointer;">
-                  {{ filename }}
-                  <a class="alert-success float-right">Download</a>
-                </a><br>
-              </div>
+<!--              <div *ngFor="let filename of filenames" class="list-group">-->
+<!--                <a (click)="onDownloadFile(filename, user.id)" class="list-group-item list-group-item-success" style="cursor: pointer;">-->
+<!--                  {{ filename }}-->
+<!--                  <a class="alert-success float-right">Download</a>-->
+<!--                </a><br>-->
+<!--              </div>-->
               <button mat-button color="primary" (click)="accept(user.id)">Accept</button>
               <button mat-button color="warn" (click)="decline(user.id)">Decline</button>
             </div>
+            <h3>Here details student unchecked</h3>
           </mat-expansion-panel>
         </mat-list-item>
       </mat-tab>
       <mat-tab label="Accepted">
-        <mat-list-item *ngFor="let user of acceptedList(); let i = index">
+        <mat-list-item *ngFor="let user of usersAccepted; let i = index">
           <mat-expansion-panel hideToggle style="margin-bottom: 15px">
             <mat-expansion-panel-header>
               <!-- User FLM names-->
@@ -43,12 +44,12 @@
               </button>
             </mat-expansion-panel-header>
             <!--User details content-->
-            <h3>This student accepted</h3>
+            <h3>Here details student accepted</h3>
           </mat-expansion-panel>
         </mat-list-item>
       </mat-tab>
       <mat-tab label="Declined">
-        <mat-list-item *ngFor="let user of declinedList(); let i = index">
+        <mat-list-item *ngFor="let user of usersDeclined; let i = index">
           <mat-expansion-panel hideToggle style="margin-bottom: 15px">
             <mat-expansion-panel-header>
               <!-- User FLM names-->
@@ -61,7 +62,7 @@
               </button>
             </mat-expansion-panel-header>
             <!--User details content-->
-            <h3>This student declined</h3>
+            <h3>Here details student declined</h3>
           </mat-expansion-panel>
         </mat-list-item>
       </mat-tab>
@@ -72,11 +73,9 @@
     <mat-card class="status-card">
       <mat-card-header style="text-align: left">
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Status</mat-card-title>
+        <mat-card-title><h1>Status</h1></mat-card-title>
+        <mat-card-subtitle><h3>{{user.status}}</h3></mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content>
-        <h2>STATUS</h2>
-      </mat-card-content>
     </mat-card>
   </div>
 

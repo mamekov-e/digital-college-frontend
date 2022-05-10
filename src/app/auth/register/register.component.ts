@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     return this.fb.group({
       firstName: ['', Validators.compose([Validators.required])],
       lastName: ['', Validators.compose([Validators.required])],
-      middleName: ['', Validators.compose([Validators.required])],
+      middleName: [''],
       phoneNumber: ['', Validators.compose([Validators.required])],
       email: ['', Validators.compose([Validators.email, Validators.required])],
       password: ['', Validators.compose([Validators.required])],
@@ -50,9 +50,6 @@ export class RegisterComponent implements OnInit {
       console.log(data);
       this.notificationService.showSnackBar("Successfully registered");
       this.router.navigate(['login']);
-
-    }, error => {
-      this.notificationService.showSnackBar(error.message);
     })
   }
 

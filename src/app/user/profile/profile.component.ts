@@ -16,6 +16,7 @@ import {Router} from "@angular/router";
 export class ProfileComponent implements OnInit {
 
   isUserDataLoaded = false;
+  isUploaded = false;
   user!: User;
   selectedFile!: File;
   userProfileImage!: File;
@@ -37,6 +38,7 @@ export class ProfileComponent implements OnInit {
 
     this.imageService.getUserImage()
       .subscribe(data => {
+        console.log(data)
         this.userProfileImage = data.imageByte;
       });
   }
@@ -49,6 +51,7 @@ export class ProfileComponent implements OnInit {
 
     reader.onload = () => {
       this.previewImageURL = reader.result;
+      this.isUploaded = false;
     };
   }
 
@@ -78,6 +81,7 @@ export class ProfileComponent implements OnInit {
       this.imageService.uploadImage(this.selectedFile)
         .subscribe(() => {
           this.notificationService.showSnackBar('Profile Image updated successfully');
+          this.isUploaded = true;
         });
     }
   }

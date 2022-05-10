@@ -34,6 +34,24 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     if (this.tokenService.getRole() === "ROLE_ADMIN") {
       this.isAdmin = true;
+
+      this.adminService.getAllUsersUnchecked()
+        .subscribe(data => {
+          this.usersUnchecked = data;
+          this.isUsersLoaded = true;
+        })
+
+      this.adminService.getAllUsersAccepted()
+        .subscribe(data => {
+          this.usersAccepted = data;
+          this.isUsersLoaded = true;
+        })
+
+      this.adminService.getAllUsersDeclined()
+        .subscribe(data => {
+          this.usersDeclined = data;
+          this.isUsersLoaded = true;
+        })
     }
 
     this.userService.getCurrentUser()
@@ -76,6 +94,7 @@ export class IndexComponent implements OnInit {
   uncheckedList(): User[] {
     this.adminService.getAllUsersUnchecked()
       .subscribe(data => {
+        console.log(data);
         this.usersUnchecked = data;
         this.isUsersLoaded = true;
       });

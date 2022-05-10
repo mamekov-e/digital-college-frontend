@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {User} from "../models/User";
 
-const ADMIN_API = "http://localhost:8080/api/admin";
+const ADMIN_API = "http://localhost:8080/api/admin/";
 
 @Injectable({
   providedIn: 'root'
